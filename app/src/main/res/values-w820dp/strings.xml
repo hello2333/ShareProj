@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MyShareApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_center">CenterActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_mine">MineActivity</string>
+    <string name="title_activity_create">CreateActivity</string>
+    <string name="title_activity_notice">NoticeActivity</string>
+
+    <string name="item_center_title">【历史杂谈】古代“特殊政策”：西汉帝不许穿丝乘车"</string>
+    <string name="item_center_context">国有国策，但凡国策的制定，都必将影响国计民生。天下之大，无奇不有。在我国历史上，有这样一位</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="item_deltai_follow">蝶恋花：回复 水龙吟：所以说暂停理财，除非公钥爱上了会计法看爱上了会计法可莱丝 </string>
+</resources>
