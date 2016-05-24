@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context="com.zhning.myshareapp.MainActivity">
+        tools:context="com.zhning.shareproj.MainActivity">
 
     <android.support.design.widget.AppBarLayout
             android:layout_height="wrap_content"
@@ -31,6 +31,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="go to pool"/>
+
+        <Button android:id="@+id/bt_goto_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="go to Detail"/>
 
         <Button android:id="@+id/bt_goto_mine"
             android:layout_width="match_parent"

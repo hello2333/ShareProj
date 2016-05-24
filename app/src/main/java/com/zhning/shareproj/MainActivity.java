@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.zhning.shareproj.activity.CenterActivity;
 import com.zhning.shareproj.activity.CreateActivity;
+import com.zhning.shareproj.activity.DetailActivity;
 import com.zhning.shareproj.activity.MineActivity;
 import com.zhning.shareproj.activity.NoticeActivity;
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Button btGotoCreate;
     @Bind(R.id.bt_goto_notice)
     Button btGotoNotice;
+    @Bind(R.id.bt_goto_detail)
+    Button btGotoDetail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initListener() {
+        btGotoDetail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btGotoPool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.zhning.myshareapp.R;
-import com.zhning.myshareapp.entity.PostComment;
-import com.zhning.myshareapp.entity.User;
-import com.zhning.myshareapp.utils.ModelUtil;
+import com.zhning.shareproj.R;
+import com.zhning.shareproj.entity.PostComment;
+import com.zhning.shareproj.entity.User;
+import com.zhning.shareproj.utils.ModelUtil;
 
 import java.util.ArrayList;
 import java.util.List;

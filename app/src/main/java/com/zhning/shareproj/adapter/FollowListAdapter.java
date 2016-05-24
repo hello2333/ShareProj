@@ -9,12 +9,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.zhning.myshareapp.R;
-import com.zhning.myshareapp.entity.PostFollow;
-import com.zhning.myshareapp.entity.User;
-import com.zhning.myshareapp.listener.OnFollowItemClickListener;
-import com.zhning.myshareapp.utils.ModelUtil;
-import com.zhning.myshareapp.utils.ToastUtil;
+import com.zhning.shareproj.R;
+import com.zhning.shareproj.entity.PostFollow;
+import com.zhning.shareproj.entity.User;
+import com.zhning.shareproj.listener.OnFollowItemClickListener;
+import com.zhning.shareproj.utils.ModelUtil;
+import com.zhning.shareproj.utils.ToastUtil;
 
 import java.util.List;
 
