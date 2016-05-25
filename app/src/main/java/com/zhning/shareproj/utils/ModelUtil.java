@@ -104,6 +104,24 @@ public class ModelUtil {
                 content, (int)Constants.POSTFOLLOW_5 + 1));
         postFollows.add(new PostFollow(Constants.POSTFOLLOW_6, Constants.POST_1, Constants.USER_3,
                 content, (int)Constants.POSTFOLLOW_6 + 1));
+        postFollows.add(new PostFollow(Constants.POSTFOLLOW_7, Constants.POST_1, Constants.USER_4,
+                content, (int)Constants.POSTFOLLOW_7 + 1));
+        postFollows.add(new PostFollow(Constants.POSTFOLLOW_8, Constants.POST_1, Constants.USER_5,
+                content, (int)Constants.POSTFOLLOW_8 + 1));
+        postFollows.add(new PostFollow(Constants.POSTFOLLOW_9, Constants.POST_1, Constants.USER_2,
+                content, (int)Constants.POSTFOLLOW_9 + 1));
+        postFollows.add(new PostFollow(Constants.POSTFOLLOW_10, Constants.POST_1, Constants.USER_3,
+                content, (int)Constants.POSTFOLLOW_10 + 1));
+        postFollows.add(new PostFollow(Constants.POSTFOLLOW_11, Constants.POST_1, Constants.USER_4,
+                content, (int)Constants.POSTFOLLOW_11 + 1));
+        postFollows.add(new PostFollow(Constants.POSTFOLLOW_12, Constants.POST_1, Constants.USER_5,
+                content, (int)Constants.POSTFOLLOW_12 + 1));
+        postFollows.add(new PostFollow(Constants.POSTFOLLOW_13, Constants.POST_1, Constants.USER_2,
+                content, (int)Constants.POSTFOLLOW_13 + 1));
+        postFollows.add(new PostFollow(Constants.POSTFOLLOW_14, Constants.POST_1, Constants.USER_3,
+                content, (int)Constants.POSTFOLLOW_14 + 1));
+        postFollows.add(new PostFollow(Constants.POSTFOLLOW_15, Constants.POST_1, Constants.USER_4,
+                content, (int)Constants.POSTFOLLOW_15 + 1));
     }
 
     private void initPostCommentList(){
@@ -120,7 +138,7 @@ public class ModelUtil {
     }
 
     public static Post getPostDetail(long postId){
-        return postList.get((int)postId);
+        return postList.get((int)postId - 1);
     }
 
     public static List<PostFollow> getPostFollowByPostId(long postId){

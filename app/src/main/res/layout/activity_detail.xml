@@ -1,66 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="com.zhning.shareproj.activity.DetailActivity">
-    <LinearLayout android:id="@+id/ll_detail_first"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="5dp">
-        <ImageView android:id="@+id/iv_detail_head"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/user1p"/>
-        <LinearLayout
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar_detail"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/font_black_5" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_detail_follow"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="5dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView android:id="@+id/tv_detail_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="蝶恋花"
-                    android:padding="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="&#160;&#160;&#160;第1楼"/>
-            </LinearLayout>
-
-            <TextView android:id="@+id/tv_detail_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/item_center_title"
-                style="@style/titleStyle"
-                android:padding="5dp"/>
-            <TextView android:id="@+id/tv_detail_context"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/item_center_context"
-                android:lineSpacingExtra="2dp"
-                android:paddingRight="5dp"
-                android:paddingLeft="5dp"/>
-            <ImageView android:id="@+id/iv_detail_pic"
-                android:padding="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@color/font_black_4"/>
-        </LinearLayout>
+            android:padding="10dp"/>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/font_black_5"/>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_detail_follow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

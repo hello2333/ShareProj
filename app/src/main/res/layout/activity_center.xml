@@ -13,6 +13,10 @@
         android:orientation="vertical">
 
         <include layout="@layout/toolbar_pool" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/font_black_5" />
 
         <android.support.v4.widget.SwipeRefreshLayout
             android:layout_width="match_parent"

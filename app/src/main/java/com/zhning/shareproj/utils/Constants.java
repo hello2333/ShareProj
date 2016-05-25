@@ -32,4 +32,13 @@ public class Constants {
     public static final long POSTFOLLOW_5 = 5;
     public static final long POSTFOLLOW_6 = 6;
     public static final long POSTFOLLOW_7 = 7;
+    public static final long POSTFOLLOW_8 = 8;
+    public static final long POSTFOLLOW_9 = 9;
+    public static final long POSTFOLLOW_10 = 10;
+    public static final long POSTFOLLOW_11 = 11;
+    public static final long POSTFOLLOW_12 = 12;
+    public static final long POSTFOLLOW_13 = 13;
+    public static final long POSTFOLLOW_14 = 14;
+    public static final long POSTFOLLOW_15 = 15;
+
 }

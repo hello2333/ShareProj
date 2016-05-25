@@ -8,16 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import com.zhning.shareproj.R;
 import com.zhning.shareproj.adapter.FollowListAdapter;
 import com.zhning.shareproj.entity.Post;
 import com.zhning.shareproj.entity.PostComment;
 import com.zhning.shareproj.entity.PostFollow;
-import com.zhning.shareproj.entity.User;
 import com.zhning.shareproj.listener.OnFollowItemClickListener;
 import com.zhning.shareproj.utils.ModelUtil;
 import com.zhning.shareproj.utils.ToastUtil;
@@ -31,20 +27,8 @@ import butterknife.ButterKnife;
 public class DetailActivity extends AppCompatActivity {
     private static final String TAG = "DetailActivity";
 
-    @Bind(R.id.iv_detail_head)
-    ImageView ivDetailHead;
-    @Bind(R.id.tv_detail_name)
-    TextView tvDetailName;
-    @Bind(R.id.tv_detail_title)
-    TextView tvDetailTitle;
-    @Bind(R.id.tv_detail_context)
-    TextView tvDetailContext;
-    @Bind(R.id.iv_detail_pic)
-    ImageView ivDetailPic;
     @Bind(R.id.rv_detail_follow)
     RecyclerView rvDetailFollow;
-    @Bind(R.id.ll_detail_first)
-    LinearLayout llDetailFirst;
 
     FollowListAdapter followListAdapter;
 
@@ -74,16 +58,8 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        User user = ModelUtil.getUser(post.getUserId());
-
-        ivDetailHead.setImageResource(
-                user.getPortrait());
-        tvDetailName.setText(user.getName());
-        tvDetailTitle.setText(post.getTitle());
-        tvDetailContext.setText(post.getContent());
-        ivDetailPic.setImageResource(post.getPic());
-
-        // notifyDataFailed
+        // TODO:notifyDataFailed——to be modified
+        post = ModelUtil.getPostDetail(postId);
         postFollowList = ModelUtil.getPostFollowByPostId(postId);
         if (null == postFollowList)
             postFollowList = new ArrayList<>();
@@ -91,11 +67,13 @@ public class DetailActivity extends AppCompatActivity {
             List<PostComment> postCommentList = ModelUtil.getCommentByFollowId(follow.getId());
             if (null == postCommentList)
                 postCommentList = new ArrayList<>();
-            Log.i(TAG, "follow " + follow.getId() + "'s comment size:" + postCommentList.size());
+            //Log.i(TAG, "follow " + follow.getId() + "'s comment size:" + postCommentList.size());
             follow.setPostCommentList(postCommentList);
         }
+        //TODO:end
 
-        followListAdapter = new FollowListAdapter(mContext, postFollowList);
+        followListAdapter = new FollowListAdapter(mContext, postFollowList, post);
+        Log.i(TAG, "post Title:" + post.getTitle());
         followListAdapter.setOnCenterItemClickListener(new OnFollowItemClickListener() {
             @Override
             public void onFollowItemClick(long id) {
@@ -103,8 +81,8 @@ public class DetailActivity extends AppCompatActivity {
             }
         });
         rvDetailFollow.setLayoutManager(new LinearLayoutManager(mContext));
-        rvDetailFollow.addView(llDetailFirst);
         rvDetailFollow.setAdapter(followListAdapter);
+
         getPostFollowFromServer();
     }
 

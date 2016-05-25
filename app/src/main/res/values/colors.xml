@@ -36,4 +36,6 @@
 
     <!-- nuomi -->
     <color name="nuomi">#fc2749</color>
+
+    <color name="item_comm_username">#007fff</color>
 </resources>
