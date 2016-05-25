@@ -58,7 +58,7 @@ public class PoolListAdapter extends RecyclerView.Adapter<PoolListAdapter.PoolVi
         holder.ivUserImage.setImageResource(user.getPortrait());
         holder.tvCenterTitle.setText(post.getTitle());
         holder.tvCenterContent.setText(post.getContent());
-        // holder.ivCenterPic.setImageResource();
+        holder.ivCenterPic.setImageResource(post.getPic());
     }
 
     @Override
@@ -79,7 +79,7 @@ public class PoolListAdapter extends RecyclerView.Adapter<PoolListAdapter.PoolVi
             tvUserName = (TextView) itemView.findViewById(R.id.tv_center_name);
             tvCenterTitle = (TextView) itemView.findViewById(R.id.tv_center_title);
             tvCenterContent = (TextView) itemView.findViewById(R.id.tv_center_context);
-            ivCenterPic = (ImageView) itemView.findViewById(R.id.iv_center_portrait);
+            ivCenterPic = (ImageView) itemView.findViewById(R.id.iv_center_pic);
         }
     }
 }

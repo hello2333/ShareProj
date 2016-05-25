@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="招募池"
+        android:text="社区中心"
         android:textSize="20sp"
         android:textColor="@android:color/black"/>
     <ImageView android:id="@+id/iv_recruit_add"

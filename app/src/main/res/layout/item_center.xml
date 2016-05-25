@@ -38,7 +38,7 @@
                 android:paddingLeft="5dp"
                 android:maxLines="2"
                 android:ellipsize="end"/>
-            <ImageView android:id="@+id/tv_center_pic"
+            <ImageView android:id="@+id/iv_center_pic"
                 android:padding="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
