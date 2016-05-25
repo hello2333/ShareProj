@@ -14,6 +14,15 @@ public class Post {
     int follow;
     int collect;
 
+    public Post(long id, long userId, int type, String title, String content, int pic) {
+        this.id = id;
+        this.userId = userId;
+        this.type = type;
+        this.title = title;
+        this.content = content;
+        this.pic = pic;
+    }
+
     public long getId() {
         return id;
     }

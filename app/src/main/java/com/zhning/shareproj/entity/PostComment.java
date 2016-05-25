@@ -11,6 +11,14 @@ public class PostComment {
     String content;
     boolean read;
 
+    public PostComment(long id, long postFollowId, long userId, long toUserId, String content) {
+        this.id = id;
+        this.postFollowId = postFollowId;
+        this.userId = userId;
+        this.toUserId = toUserId;
+        this.content = content;
+    }
+
     public long getId() {
         return id;
     }

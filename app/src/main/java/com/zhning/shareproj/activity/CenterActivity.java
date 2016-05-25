@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,8 @@ import com.zhning.shareproj.R;
 import com.zhning.shareproj.adapter.PoolListAdapter;
 import com.zhning.shareproj.entity.Post;
 import com.zhning.shareproj.listener.OnCenterItemClickListener;
+import com.zhning.shareproj.utils.ModelUtil;
+import com.zhning.shareproj.utils.MyApp;
 import com.zhning.shareproj.utils.ToastUtil;
 
 import java.util.ArrayList;
@@ -74,15 +77,15 @@ public class CenterActivity extends AppCompatActivity {
             }
         });
 
+        postList = ModelUtil.getAllPost();
         poolListAdapter = new PoolListAdapter(this, postList);
+
         poolListAdapter.setOnCenterItemClickListener(new OnCenterItemClickListener() {
             @Override
             public void onCenterItemClick(long id) {
                 Intent intent = new Intent(mActivity, DetailActivity.class);
-                ToastUtil.show(mContext, "recruitId:" + id);
-                Bundle bundle = new Bundle();
-                bundle.putLong("recruitId", id);
-                intent.putExtras(bundle);
+                ToastUtil.show(mContext, "postId:" + id);
+                intent.putExtra("postId", id);
                 startActivity(intent);
             }
         });
@@ -103,7 +106,9 @@ public class CenterActivity extends AppCompatActivity {
     }
 
     public void getDateFromServer(){
-
+        postList = ModelUtil.getAllPost();
+        poolListAdapter.notifyDataSetChanged();
+        Log.i(TAG, "postListSize:" + postList.size());
     }
 
     @Override

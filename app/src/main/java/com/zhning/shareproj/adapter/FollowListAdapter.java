@@ -2,6 +2,7 @@ package com.zhning.shareproj.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +22,9 @@ import java.util.List;
 /**
  * Created by baidu on 16/5/5.
  */
-public class FollowListAdapter extends RecyclerView.Adapter<FollowListAdapter.PoolViewHolder>{
+public class FollowListAdapter extends RecyclerView.Adapter<FollowListAdapter.FollowViewHolder>{
     List<PostFollow> data;
+
     private LayoutInflater inflater;
     private Context mContext;
     private OnFollowItemClickListener onFollowItemClickListener;
@@ -41,9 +43,9 @@ public class FollowListAdapter extends RecyclerView.Adapter<FollowListAdapter.Po
         this.onFollowItemClickListener = onFollowItemClickListener;
     }
     @Override
-    public PoolViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        final View view = inflater.inflate(R.layout.item_center, parent, false);
-        PoolViewHolder holder = new PoolViewHolder(view);
+    public FollowViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        final View view = inflater.inflate(R.layout.item_detail_follow, parent, false);
+        FollowViewHolder holder = new FollowViewHolder(view);
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +56,7 @@ public class FollowListAdapter extends RecyclerView.Adapter<FollowListAdapter.Po
     }
 
     @Override
-    public void onBindViewHolder(PoolViewHolder holder, int position) {
+    public void onBindViewHolder(FollowViewHolder holder, int position) {
         PostFollow postFollow = data.get(position);
         User user = ModelUtil.getUser(postFollow.getUserId());
         holder.itemView.setTag(postFollow.getId());
@@ -69,7 +71,10 @@ public class FollowListAdapter extends RecyclerView.Adapter<FollowListAdapter.Po
             }
         });
 
-        // holder.ivCenterPic.setImageResource();
+        CommentListAdapter commentListAdapter = new CommentListAdapter(mContext,
+                postFollow.getPostCommentList());
+        Log.i("FollowListAdapter", postFollow.getId() + "'s comment size:" + postFollow.getPostCommentList().size());
+        holder.lvDetailComment.setAdapter(commentListAdapter);
     }
 
     @Override
@@ -77,14 +82,17 @@ public class FollowListAdapter extends RecyclerView.Adapter<FollowListAdapter.Po
         return data.size();
     }
 
-    class PoolViewHolder extends RecyclerView.ViewHolder {
+
+
+    class FollowViewHolder extends RecyclerView.ViewHolder {
         ImageView ivUserImage;
         TextView tvUserName;
         TextView tvFollowContent;
         TextView tvFollowFloor;
         ImageView ivDetailFollowComm;
         ListView lvDetailComment;
-        public PoolViewHolder(View itemView) {
+
+        public FollowViewHolder(View itemView) {
             super(itemView);
             ivUserImage = (ImageView) itemView.findViewById(R.id.iv_detail_follow_portrait);
             tvUserName = (TextView) itemView.findViewById(R.id.tv_detail_follow_name);

@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">ShareProj</string>
     <string name="action_settings">Settings</string>
+
+    <string name="title_activity_center">CenterActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_mine">MineActivity</string>
+    <string name="title_activity_create">CreateActivity</string>
+    <string name="title_activity_notice">NoticeActivity</string>
+
+    <string name="item_center_title">【历史杂谈】古代“特殊政策”：西汉帝不许穿丝乘车"</string>
+    <string name="item_center_context">国有国策，但凡国策的制定，都必将影响国计民生。天下之大，无奇不有。在我国历史上，有这样一位</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="item_deltai_follow">蝶恋花：回复 水龙吟：所以说暂停理财，除非公钥爱上了会计法看爱上了会计法可莱丝 </string>
+
+    <string name="item_follow_content">和小伙伴约饭，烤什么名堂离我们几个都很近，看评价也很高，就来尝试一下。\n
+位置：西门里顺着城墙向南走大概三四百米的一个丁字路口，店面很显眼，门口的门帘是个古装的衣服挺个性的。\n
+环境：装修很有特点古色古香的，很多都是农家菜為了配合菜品吧，装修很考究不错。\n
+服务：服务员的眉心都有画的莲花吧，给我们服务的大妈看着年纪有点大了，服务态度不是太好哦。\n
+菜品：#烤油饼#小小的一个，味道还不错，烤的酥酥的，料也很足。#涮牛肚豆皮#麻辣味重，蒜泥给了很多，芝麻酱略少，总体味道不错。#麻酱酿皮#味道好值得推荐#辣炒蛤蜊#壳也太多了吧，有肉的肉也很小，还有三四个没张嘴的。#烤牛肉#烤的略干，调料就显得味重。整体还不错，付款还送了优惠券。</string>
 </resources>

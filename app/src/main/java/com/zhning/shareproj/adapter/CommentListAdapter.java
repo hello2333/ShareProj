@@ -27,9 +27,18 @@ public class CommentListAdapter extends BaseAdapter {
     private LayoutInflater mInflater;
     private Context mContext;
 
-    public CommentListAdapter(Context context) {
+    public CommentListAdapter(Context context, List<PostComment> data) {
         mContext = context;
         mInflater = LayoutInflater.from(mContext);
+        data = this.data;
+    }
+
+    public List<PostComment> getData() {
+        return data;
+    }
+
+    public void setData(List<PostComment> data) {
+        this.data = data;
     }
 
     @Override
