@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:gravity="center_horizontal"
+	android:background="@color/white"
+	>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/toolbar_photo_item" />
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="1dp"
+			android:background="@color/font_black_5" />
+        <!-- 定义一个GridView组件 -->
+        <GridView  android:id="@+id/grid2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4"
+            android:gravity="center"
+            android:clickable="false"
+            android:focusable="false"
+            android:background="@color/white" />
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

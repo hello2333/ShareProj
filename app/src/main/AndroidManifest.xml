@@ -30,7 +30,8 @@
         </activity>
         <activity
             android:name=".activity.CreateActivity"
-            android:label="@string/title_activity_create" >
+            android:label="@string/title_activity_create"
+            android:launchMode="singleTask">
         </activity>
         <activity
             android:name=".activity.NoticeActivity"
@@ -40,6 +41,18 @@
             android:name=".activity.DetailActivity"
             android:label="@string/title_activity_detail" >
         </activity>
+
+        <activity android:name=".activity.PhoneAlbumBaseActivity">
+
+        </activity>
+
+        <activity android:name=".activity.PhoneItemBaseActivity">
+
+        </activity>
     </application>
 
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

@@ -35,7 +35,7 @@ public class CenterActivity extends AppCompatActivity {
     SwipeRefreshLayout srlCenter;
     @Bind(R.id.rv_center_list)
     RecyclerView rvCenterList;
-    @Bind(R.id.iv_recruit_add)
+    @Bind(R.id.iv_center_add)
     ImageView ivPostAdd;
 
     PoolListAdapter poolListAdapter;

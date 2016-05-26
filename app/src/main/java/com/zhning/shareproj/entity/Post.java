@@ -10,9 +10,13 @@ public class Post {
     String title;
     String content;
     int pic;
+    String picUrl;
     int praise;
     int follow;
     int collect;
+
+    public Post() {
+    }
 
     public Post(long id, long userId, int type, String title, String content, int pic) {
         this.id = id;
@@ -69,6 +73,14 @@ public class Post {
 
     public void setPic(int pic) {
         this.pic = pic;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 
     public int getPraise() {

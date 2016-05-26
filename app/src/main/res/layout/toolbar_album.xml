@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:gravity="center_vertical"
-    tools:showIn="@layout/activity_center">
+    tools:showIn="@layout/activity_phone_album_base">
     <ImageView android:id="@+id/iv_back_arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,13 +16,12 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="社区中心"
+        android:text="相册"
         android:textSize="20sp"
         android:textColor="@android:color/black"/>
-    <ImageView android:id="@+id/iv_center_add"
+    <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/recruit_add"
         android:layout_alignParentRight="true"
         android:padding="8dp"
         android:layout_marginRight="10dp"
