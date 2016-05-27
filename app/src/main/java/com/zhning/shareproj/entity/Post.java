@@ -1,5 +1,7 @@
 package com.zhning.shareproj.entity;
 
+import com.zhning.shareproj.utils.ModelUtil;
+
 /**
  * Created by zhning on 2016/5/23.
  */
@@ -68,6 +70,8 @@ public class Post {
     }
 
     public int getPic() {
+        if (pic <= 0)
+            pic = ModelUtil.getPic();
         return pic;
     }
 

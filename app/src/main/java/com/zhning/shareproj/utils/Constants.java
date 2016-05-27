@@ -4,6 +4,8 @@ package com.zhning.shareproj.utils;
  * Created by baidu on 16/5/5.
  */
 public class Constants {
+    public static final String ipv4 = "http://192.168.1.100:3000/";
+
     public static final int POST_FOOD = 1;
     public static final int POST_BEAUTY = 2;
     public static final int POST_KTV = 3;

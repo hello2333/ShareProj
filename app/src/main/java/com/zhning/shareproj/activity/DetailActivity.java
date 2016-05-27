@@ -58,19 +58,6 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        // TODO:notifyDataFailed——to be modified
-        post = ModelUtil.getPostDetail(postId);
-        postFollowList = ModelUtil.getPostFollowByPostId(postId);
-        if (null == postFollowList)
-            postFollowList = new ArrayList<>();
-        for (PostFollow follow : postFollowList){
-            List<PostComment> postCommentList = ModelUtil.getCommentByFollowId(follow.getId());
-            if (null == postCommentList)
-                postCommentList = new ArrayList<>();
-            //Log.i(TAG, "follow " + follow.getId() + "'s comment size:" + postCommentList.size());
-            follow.setPostCommentList(postCommentList);
-        }
-        //TODO:end
 
         followListAdapter = new FollowListAdapter(mContext, postFollowList, post);
         Log.i(TAG, "post Title:" + post.getTitle());
@@ -94,7 +81,7 @@ public class DetailActivity extends AppCompatActivity {
         postFollowList = ModelUtil.getPostFollowByPostId(postId);
         if (null == postFollowList)
             postFollowList = new ArrayList<>();
-        followListAdapter.notifyDataSetChanged();
+        followListAdapter.setData(postFollowList);
         getCommentsForFollows();
     }
 
@@ -105,6 +92,8 @@ public class DetailActivity extends AppCompatActivity {
                 postCommentList = new ArrayList<>();
             follow.setPostCommentList(postCommentList);
         }
+
+        followListAdapter.setData(postFollowList);
         followListAdapter.notifyDataSetChanged();
     }
 

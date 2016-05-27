@@ -76,7 +76,7 @@ public class CreateActivity extends AppCompatActivity {
                 Post post = new Post();
                 post.setTitle(title);
                 post.setContent(content);
-                post.setUserId(MyApp.getInstance().getCurrentUser());
+                post.setUserId(((MyApp)getApplication()).getCurrentUser());
 
                 if (!paths.isEmpty()){
                     String picUrl = sendPictoServer();

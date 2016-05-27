@@ -1,39 +1,64 @@
 package com.zhning.shareproj.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.zhning.shareproj.R;
+import com.zhning.shareproj.adapter.MinePagerAdapter;
+import com.zhning.shareproj.fragment.MineCollectFragment;
+import com.zhning.shareproj.fragment.MinePublishFragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 public class MineActivity extends AppCompatActivity {
+    @Bind(R.id.tl_mine)
+    TabLayout tlMine;
+    @Bind(R.id.vp_mine)
+    ViewPager vpMine;
+
+    List<String> titles;
+    List<Fragment> fragmentList = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mine);
+
+        ButterKnife.bind(this);
+
+        initData();
+        initView();
+        initListener();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_mine, menu);
-        return true;
+    private void initData() {
+        Fragment publish = new MinePublishFragment();
+        Fragment collect = new MineCollectFragment();
+        fragmentList = new ArrayList<>();
+        fragmentList.add(publish);
+        fragmentList.add(collect);
+
+        titles = new ArrayList<>();
+        titles.add("我发布的");
+        titles.add("我的收藏");
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    private void initView() {
+        MinePagerAdapter pagerAdapter = new MinePagerAdapter(getSupportFragmentManager(), fragmentList, titles);
+        vpMine.setAdapter(pagerAdapter);
+        tlMine.setupWithViewPager(vpMine);
+        tlMine.setTabMode(TabLayout.MODE_FIXED);
     }
+
+    private void initListener() {
+
+    }
+
 }

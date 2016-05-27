@@ -14,10 +14,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.zhning.shareproj.R;
 import com.zhning.shareproj.adapter.PoolListAdapter;
 import com.zhning.shareproj.entity.Post;
 import com.zhning.shareproj.listener.OnCenterItemClickListener;
+import com.zhning.shareproj.utils.Constants;
 import com.zhning.shareproj.utils.ModelUtil;
 import com.zhning.shareproj.utils.MyApp;
 import com.zhning.shareproj.utils.ToastUtil;
@@ -77,7 +84,7 @@ public class CenterActivity extends AppCompatActivity {
             }
         });
 
-        postList = ModelUtil.getAllPost();
+        // postList = ModelUtil.getAllPost();
         poolListAdapter = new PoolListAdapter(this, postList);
 
         poolListAdapter.setOnCenterItemClickListener(new OnCenterItemClickListener() {
@@ -106,9 +113,26 @@ public class CenterActivity extends AppCompatActivity {
     }
 
     public void getDateFromServer(){
-        postList = ModelUtil.getAllPost();
-        poolListAdapter.notifyDataSetChanged();
-        Log.i(TAG, "postListSize:" + postList.size());
+        MyApp myApp = (MyApp) getApplication();
+        String url = Constants.ipv4 + "posts";
+        StringRequest centerReq = new StringRequest(Request.Method.GET,
+                url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                postList = new Gson().fromJson(response, new TypeToken<List<Post>>(){}.getType());
+                Log.i(TAG, "postListSize:" + postList.size());
+                poolListAdapter.setData(postList);
+                poolListAdapter.notifyDataSetChanged();
+            }
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.i(TAG, "从服务器获取post失败");
+                ToastUtil.show(mContext, "网络异常");
+            }
+        });
+        myApp.addToRequestQueue(centerReq);
     }
 
     @Override

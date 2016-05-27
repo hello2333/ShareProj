@@ -154,4 +154,17 @@ public class ModelUtil {
         else
             return null;
     }
+
+    public static List<Post> getCollectPostByUserId(long userId){
+        List<Post> collectList = new ArrayList<>();
+        for (Post post : postList){
+            if (post.getUserId() == userId)
+                collectList.add(post);
+        }
+        return collectList;
+    }
+
+    public static int getPic(){
+        return R.drawable.post_food4;
+    }
 }

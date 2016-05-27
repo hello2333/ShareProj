@@ -58,7 +58,6 @@ public class PoolListAdapter extends RecyclerView.Adapter<PoolListAdapter.PoolVi
         holder.ivUserImage.setImageResource(user.getPortrait());
         holder.tvCenterTitle.setText(post.getTitle());
         holder.tvCenterContent.setText(post.getContent());
-        holder.ivCenterPic.setImageResource(post.getPic());
     }
 
     @Override

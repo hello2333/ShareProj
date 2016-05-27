@@ -15,24 +15,13 @@ public class MyApp extends Application {
 
     private long userId;
     private ModelUtil modelUtil;
-    private static final String ipv4 = "http://172.21.234.53:8080/together";
     private RequestQueue mRequestQueue;
-    private static MyApp mInstance;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        mInstance = this;
         modelUtil = new ModelUtil(this);
         userId = Constants.USER_1;
-    }
-
-    public static synchronized MyApp getInstance() {
-        return mInstance;
-    }
-
-    public static String getIpv4() {
-        return ipv4;
     }
 
     public RequestQueue getRequestQueue() {
